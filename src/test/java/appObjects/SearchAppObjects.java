@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class SearchAppObjects {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public SearchAppObjects(WebDriver driver){
         this.driver = driver;
@@ -21,6 +21,14 @@ public class SearchAppObjects {
 
     public WebElement getMainContent(){
         return driver.findElement(By.className("ast-row"));
+    }
+
+    public WebElement getHomeLogo(){
+        return driver.findElement(By.className("site-branding"));
+    }
+
+    public WebElement getSiteContent(){
+        return driver.findElement(By.id("content"));
     }
 
 

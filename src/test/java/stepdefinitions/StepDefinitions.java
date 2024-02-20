@@ -1,18 +1,17 @@
-package testcases;
+package stepdefinitions;
 
+import io.cucumber.java.After;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import tasks.SearchTasks;
 import verificationpoints.SearchVerificationPoint;
 
-public class SearchTestCase {
+public class StepDefinitions {
     public WebDriver driver;
     private SearchTasks searchTasks;
 
@@ -44,6 +43,18 @@ public class SearchTestCase {
     @Entao("verifico se os resultados da busca batem com a minha pesquisa")
     public void verificaBusca() {
         searchVerificationPoint.verificaBusca();
+    }
+
+    @Entao("clico no logo para retornar à homepage")
+    public void retornarHome() throws Throwable{
+        Thread.sleep(2000);
+        searchTasks.clickLogoHome();
+        Thread.sleep(2000);
+        searchVerificationPoint.verificaHome();
+    }
+
+    @After
+    public void closeDriver(){
         driver.close();
     }
 }

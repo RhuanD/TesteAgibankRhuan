@@ -5,11 +5,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class SearchTasks {
-    private WebDriver driver;
-    private SearchAppObjects searchAppObjects;
+    private final SearchAppObjects searchAppObjects;
 
     public SearchTasks(WebDriver driver){
-        this.driver = driver;
         searchAppObjects = new SearchAppObjects(driver);
     }
 
@@ -22,6 +20,8 @@ public class SearchTasks {
         searchAppObjects.getSearchTextField().sendKeys(Keys.ENTER);
     }
 
-
+    public void clickLogoHome(){
+        searchAppObjects.getHomeLogo().click();
+    }
 
 }
