@@ -48,9 +48,7 @@ public class StepDefinitions {
 
     @Entao("clico no logo para retornar à homepage")
     public void retornarHome() throws Throwable{
-        Thread.sleep(2000);
         searchTasks.clickLogoHome();
-        Thread.sleep(2000);
         searchVerificationPoint.verificaHome();
     }
 
