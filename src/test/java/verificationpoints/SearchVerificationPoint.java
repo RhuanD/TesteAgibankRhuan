@@ -1,6 +1,7 @@
 package verificationpoints;
 
 import appObjects.SearchAppObjects;
+import com.aventstack.extentreports.ExtentReports;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 

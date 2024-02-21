@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
